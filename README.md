@@ -5,7 +5,7 @@ Public npm and release distribution repository for the Thinkly plugin for OpenCl
 ## Install with npm
 
 ```bash
-openclaw plugins install @pluglab_thinkly/thinkly-openclaw-plugin@beta
+openclaw plugins install @pluglab_thinkly/thinkly-openclaw-plugin
 openclaw plugins enable thinkly
 openclaw gateway restart
 ```
@@ -49,5 +49,5 @@ Development source of truth lives in the private Thinkly monorepo and is exporte
 
 ## Version channels
 
-- `beta`: first public npm rollout
-- `latest`: promoted stable npm install
+- `latest`: default stable npm install
+- `beta`: optional prerelease channel for future staged rollouts
