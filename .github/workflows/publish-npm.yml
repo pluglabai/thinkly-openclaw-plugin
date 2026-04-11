@@ -27,7 +27,7 @@ jobs:
 
       - name: Verify package metadata
         run: |
-          node -e "const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json','utf8')); if(pkg.name!=='@pluglabai/thinkly-openclaw-plugin'){throw new Error('Unexpected package name: '+pkg.name)}; console.log(pkg.name, pkg.version)"
+          node -e "const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json','utf8')); if(pkg.name!=='@pluglab_thinkly/thinkly-openclaw-plugin'){throw new Error('Unexpected package name: '+pkg.name)}; console.log(pkg.name, pkg.version)"
 
       - name: Publish dry run
         run: npm publish --dry-run --provenance --access public --tag "${{ github.event.inputs.dist_tag }}"

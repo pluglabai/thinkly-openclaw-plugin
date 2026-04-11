@@ -7,7 +7,7 @@ Public npm and release distribution repository for the Thinkly plugin for OpenCl
 Canonical package name:
 
 ```bash
-@pluglabai/thinkly-openclaw-plugin
+@pluglab_thinkly/thinkly-openclaw-plugin
 ```
 
 The npm publish workflow is prepared in this repository, but the first public `beta`
