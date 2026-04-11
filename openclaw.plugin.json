@@ -1,0 +1,87 @@
+{
+  "id": "thinkly",
+  "name": "Thinkly Capture",
+  "description": "Save highlights from OpenClaw conversations",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "apiUrl": {
+        "type": "string"
+      },
+      "apiKey": {
+        "type": "string"
+      },
+      "apiToken": {
+        "type": "string"
+      },
+      "transportMode": {
+        "type": "string",
+        "enum": ["legacy_highlights", "agent_api_v1"]
+      },
+      "llm": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "provider": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "apiKey": {
+            "type": "string"
+          }
+        }
+      },
+      "llm.provider": {
+        "type": "string"
+      },
+      "llm.model": {
+        "type": "string"
+      },
+      "llm.apiKey": {
+        "type": "string"
+      }
+    },
+    "required": ["apiUrl"]
+  },
+  "uiHints": {
+    "apiUrl": {
+      "label": "Thinkly API URL",
+      "placeholder": "https://thinkly.pluglab.ai",
+      "help": "Optional while saving settings. Required before /clip or /ingest can run."
+    },
+    "apiKey": {
+      "label": "Thinkly API Key",
+      "sensitive": true,
+      "help": "Scoped API key for the Thinkly OpenClaw plugin"
+    },
+    "apiToken": {
+      "label": "Legacy API Token",
+      "sensitive": true,
+      "help": "Backward-compatible fallback. Prefer API key for new setups."
+    },
+    "transportMode": {
+      "label": "Transport mode",
+      "help": "Use legacy_highlights for full compatibility. Use agent_api_v1 to test the newer Agent API path.",
+      "advanced": true
+    },
+    "llm.apiKey": {
+      "label": "LLM API Key",
+      "sensitive": true,
+      "advanced": true
+    },
+    "llm.provider": {
+      "label": "LLM Provider",
+      "advanced": true,
+      "help": "Optional. Example: openai"
+    },
+    "llm.model": {
+      "label": "LLM Model",
+      "advanced": true,
+      "help": "Optional. Example: gpt-4.1-mini"
+    }
+  },
+  "skills": ["skills"]
+}

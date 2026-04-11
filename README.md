@@ -1,8 +1,16 @@
 # Thinkly OpenClaw Plugin
 
-Public distribution repository for the Thinkly plugin for OpenClaw.
+Public npm and release distribution repository for the Thinkly plugin for OpenClaw.
 
-## Install
+## Install with npm beta
+
+```bash
+openclaw plugins install @pluglabai/thinkly-openclaw-plugin@beta
+openclaw plugins enable thinkly
+openclaw gateway restart
+```
+
+## Fallback install from GitHub Release
 
 ```bash
 openclaw plugins install https://github.com/pluglabai/thinkly-openclaw-plugin/releases/download/openclaw-plugin-v0.1.0/thinkly-openclaw-plugin.tgz
@@ -28,13 +36,18 @@ openclaw gateway restart
 
 ## Release assets
 
-Each release should include:
+Each release should include fallback install assets:
 
 - `thinkly-openclaw-plugin.tgz`
 - `thinkly-openclaw-plugin.tgz.sha256`
 
 ## Source of truth
 
-This repository is the public distribution surface.
+This repository is the public npm publish source and public release surface.
 
 Development source of truth lives in the private Thinkly monorepo and is exported here for public release.
+
+## Version channels
+
+- `beta`: first public npm rollout
+- `latest`: promoted stable npm install

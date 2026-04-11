@@ -1,0 +1,36 @@
+name: Publish OpenClaw Plugin to npm
+
+on:
+  workflow_dispatch:
+    inputs:
+      dist_tag:
+        description: 'npm dist-tag'
+        required: true
+        default: 'beta'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+
+      - name: Verify package metadata
+        run: |
+          node -e "const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json','utf8')); if(pkg.name!=='@pluglabai/thinkly-openclaw-plugin'){throw new Error('Unexpected package name: '+pkg.name)}; console.log(pkg.name, pkg.version)"
+
+      - name: Publish dry run
+        run: npm publish --dry-run --provenance --access public --tag "${{ github.event.inputs.dist_tag }}"
+
+      - name: Publish to npm
+        run: npm publish --provenance --access public --tag "${{ github.event.inputs.dist_tag }}"

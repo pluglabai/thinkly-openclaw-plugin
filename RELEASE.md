@@ -2,7 +2,9 @@
 
 1. Create or update release tag: openclaw-plugin-v0.1.0
 2. Upload:
-   - thinkly-openclaw-plugin.tgz
-   - thinkly-openclaw-plugin.tgz.sha256
-3. Verify install command in README
-4. Publish release notes
+   - release-assets/thinkly-openclaw-plugin.tgz
+   - release-assets/thinkly-openclaw-plugin.tgz.sha256
+3. Verify npm package metadata in package.json
+4. Run npm publish workflow for beta or latest
+5. Verify install command in README
+6. Publish release notes

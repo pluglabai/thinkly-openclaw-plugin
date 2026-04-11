@@ -1,0 +1,40 @@
+{
+  "name": "@pluglabai/thinkly-openclaw-plugin",
+  "version": "0.1.0",
+  "description": "Thinkly plugin for OpenClaw",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pluglabai/thinkly-openclaw-plugin.git"
+  },
+  "homepage": "https://thinkly.pluglab.ai/openclaw",
+  "bugs": {
+    "url": "https://github.com/pluglabai/thinkly-openclaw-plugin/issues"
+  },
+  "keywords": [
+    "openclaw",
+    "plugin",
+    "thinkly",
+    "knowledge-management"
+  ],
+  "peerDependencies": {
+    "openclaw": ">=2026.3.11"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "files": [
+    "*.ts",
+    "README.md",
+    "openclaw.plugin.json",
+    "skills/**/*"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
