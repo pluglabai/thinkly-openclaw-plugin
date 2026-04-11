@@ -2,15 +2,18 @@
 
 Public npm and release distribution repository for the Thinkly plugin for OpenClaw.
 
-## Install with npm beta
+## Planned npm package
+
+Canonical package name:
 
 ```bash
-openclaw plugins install @pluglabai/thinkly-openclaw-plugin@beta
-openclaw plugins enable thinkly
-openclaw gateway restart
+@pluglabai/thinkly-openclaw-plugin
 ```
 
-## Fallback install from GitHub Release
+The npm publish workflow is prepared in this repository, but the first public `beta`
+package is not published yet.
+
+## Install today from GitHub Release
 
 ```bash
 openclaw plugins install https://github.com/pluglabai/thinkly-openclaw-plugin/releases/download/openclaw-plugin-v0.1.0/thinkly-openclaw-plugin.tgz
