@@ -29,8 +29,25 @@ jobs:
         run: |
           node -e "const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json','utf8')); if(pkg.name!=='@pluglab_thinkly/thinkly-openclaw-plugin'){throw new Error('Unexpected package name: '+pkg.name)}; console.log(pkg.name, pkg.version)"
 
+      - name: Check if version already exists
+        id: existing
+        run: |
+          PKG_NAME=$(node -p "JSON.parse(require('fs').readFileSync('package.json','utf8')).name")
+          PKG_VERSION=$(node -p "JSON.parse(require('fs').readFileSync('package.json','utf8')).version")
+          if npm view "${PKG_NAME}@${PKG_VERSION}" version >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Publish dry run
+        if: steps.existing.outputs.published != 'true'
         run: npm publish --dry-run --provenance --access public --tag "${{ github.event.inputs.dist_tag }}"
 
       - name: Publish to npm
+        if: steps.existing.outputs.published != 'true'
         run: npm publish --provenance --access public --tag "${{ github.event.inputs.dist_tag }}"
+
+      - name: Skip duplicate publish
+        if: steps.existing.outputs.published == 'true'
+        run: echo "Package version already published. Skipping publish step."
