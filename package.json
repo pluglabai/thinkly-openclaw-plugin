@@ -1,7 +1,7 @@
 {
   "name": "@pluglab_thinkly/thinkly-openclaw-plugin",
-  "version": "0.1.0",
-  "description": "Thinkly plugin for OpenClaw",
+  "version": "0.1.1",
+  "description": "Turn AI chats, notes, files, and links into organized pages, briefs, and reusable knowledge.",
   "license": "MIT",
   "type": "module",
   "repository": {

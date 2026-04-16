@@ -1,6 +1,6 @@
 # Release Checklist
 
-1. Create or update release tag: openclaw-plugin-v0.1.0
+1. Create or update release tag: openclaw-plugin-v0.1.1
 2. Upload:
    - release-assets/thinkly-openclaw-plugin.tgz
    - release-assets/thinkly-openclaw-plugin.tgz.sha256

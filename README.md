@@ -1,6 +1,7 @@
 # Thinkly OpenClaw Plugin
 
-Public npm and release distribution repository for the Thinkly plugin for OpenClaw.
+Turn AI chats, notes, files, and links into organized pages, briefs, and reusable
+knowledge with Thinkly.
 
 ## Install with npm
 
@@ -13,7 +14,7 @@ openclaw gateway restart
 ## Fallback install from GitHub Release
 
 ```bash
-openclaw plugins install https://github.com/pluglabai/thinkly-openclaw-plugin/releases/download/openclaw-plugin-v0.1.0/thinkly-openclaw-plugin.tgz
+openclaw plugins install https://github.com/pluglabai/thinkly-openclaw-plugin/releases/download/openclaw-plugin-v0.1.1/thinkly-openclaw-plugin.tgz
 openclaw plugins enable thinkly
 openclaw gateway restart
 ```
@@ -29,10 +30,10 @@ openclaw gateway restart
 
 ## What it does
 
-- Save the latest exchange with `/clip`
-- Save a specific line with `/clip "text"`
+- Save useful OpenClaw exchanges with `/clip`
+- Save a specific line when only part of the conversation matters
 - Collect text, URLs, and files with `/ingest`
-- Send collected items into Thinkly with `/ingest save`
+- Turn saved material into organized pages, briefs, and reusable knowledge in Thinkly
 
 ## Release assets
 
@@ -51,3 +52,11 @@ Development source of truth lives in the private Thinkly monorepo and is exporte
 
 - `latest`: default stable npm install
 - `beta`: optional prerelease channel for future staged rollouts
+
+## Product framing
+
+This package follows the Thinkly `ai-workflow` landing message:
+
+- dump AI chats, notes, files, and links once
+- let Thinkly organize them automatically
+- reuse them later as pages, briefs, and connected knowledge
