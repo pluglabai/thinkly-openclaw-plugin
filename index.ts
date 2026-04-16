@@ -89,7 +89,7 @@ interface PluginApi {
 export default {
   id: "thinkly",
   name: "Thinkly Capture",
-  description: "Save highlights from OpenClaw conversations",
+  description: "Turn OpenClaw chats into a reusable wiki and knowledge graph",
 
   register(api: PluginApi) {
     // ── Capture Telegram send function ──────────────────
@@ -116,7 +116,7 @@ export default {
 
     api.registerCommand({
       name: "clip",
-      description: "Save recent conversation exchange to Thinkly",
+      description: "Save a recent exchange so it compounds into reusable pages and briefs",
       acceptsArgs: true,
       requireAuth: true,
       handler: async (ctx: PluginCommandContext) => {
@@ -147,7 +147,7 @@ export default {
 
     api.registerCommand({
       name: "ingest",
-      description: "Bulk import text or URLs to Thinkly",
+      description: "Import text, URLs, or files so Thinkly can organize them into reusable pages and briefs",
       acceptsArgs: true,
       requireAuth: true,
       handler: async (ctx: PluginCommandContext) => {
