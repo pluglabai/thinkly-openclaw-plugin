@@ -1,5 +1,5 @@
 # Changelog
 
-## openclaw-plugin-v0.1.0
+## openclaw-plugin-v0.1.1
 
 - Public distribution release for the Thinkly OpenClaw plugin.
