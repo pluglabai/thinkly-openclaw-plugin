@@ -1,7 +1,7 @@
 {
   "id": "thinkly",
   "name": "Thinkly Capture",
-  "description": "Save highlights from OpenClaw conversations",
+  "description": "Turn OpenClaw chats into a reusable wiki and knowledge graph.",
   "configSchema": {
     "type": "object",
     "additionalProperties": true,
