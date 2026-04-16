@@ -19,7 +19,7 @@ openclaw gateway restart
 ## Fallback install from GitHub Release
 
 ```bash
-openclaw plugins install https://github.com/pluglabai/thinkly-openclaw-plugin/releases/download/openclaw-plugin-v0.1.2/thinkly-openclaw-plugin.tgz
+openclaw plugins install https://github.com/pluglabai/thinkly-openclaw-plugin/releases/download/openclaw-plugin-v0.1.3/thinkly-openclaw-plugin.tgz
 openclaw plugins enable thinkly
 openclaw gateway restart
 ```
@@ -32,6 +32,19 @@ openclaw gateway restart
   "apiKey": "tk_your_api_key"
 }
 ```
+
+`apiUrl` and one Thinkly credential are required at runtime.
+Use `apiKey` for new setups. `apiToken` is still accepted as a legacy fallback.
+
+## Optional LLM intent parsing
+
+If you also configure `llm.provider`, `llm.model`, and `llm.apiKey`, the plugin can send
+user message text to the configured LLM provider to parse intent for Thinkly actions.
+
+When that LLM result has high confidence, the plugin may auto-run `/clip`, `/ingest`,
+`/ingest save`, or `/ingest cancel`.
+
+If you do not want message text sent to an external LLM, leave all `llm.*` settings empty.
 
 ## What it does
 

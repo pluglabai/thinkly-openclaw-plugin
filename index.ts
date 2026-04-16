@@ -127,7 +127,7 @@ export default {
         if (configError) {
           logger.warn("clip command blocked by missing config", { message: configError });
           return {
-            text: "Thinkly plugin is not configured yet. Add API URL and token in plugin settings.",
+            text: "Thinkly plugin is not configured yet. Add API URL and API key in plugin settings. Legacy apiToken is also supported.",
           };
         }
         try {
@@ -155,7 +155,7 @@ export default {
         if (configError) {
           logger.warn("ingest command blocked by missing config", { message: configError });
           return {
-            text: "Thinkly plugin is not configured yet. Add API URL and token in plugin settings.",
+            text: "Thinkly plugin is not configured yet. Add API URL and API key in plugin settings. Legacy apiToken is also supported.",
           };
         }
         const args = ctx.args?.trim();

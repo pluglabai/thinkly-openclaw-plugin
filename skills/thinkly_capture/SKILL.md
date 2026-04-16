@@ -21,6 +21,7 @@ Use this skill when the user wants to keep useful OpenClaw output for later reus
 - If the user wants the latest answer saved, prefer `/clip`.
 - If the user is gathering links or source material first, prefer `/ingest`.
 - If Thinkly is not configured yet, tell the user to set `apiUrl` and `apiKey` in the Thinkly OpenClaw plugin config first.
+- If optional `llm.*` settings are configured, note that the plugin may send message text to an external LLM for intent parsing and may auto-run `/clip` or `/ingest` when confidence is high.
 
 ## Config reminder
 
@@ -32,6 +33,11 @@ Use this config shape:
   "apiKey": "tk_your_api_key"
 }
 ```
+
+`apiToken` is still supported as a legacy fallback, but `apiKey` is preferred.
+
+If you configure `llm.provider`, `llm.model`, and `llm.apiKey`, message text may be sent to
+that LLM provider for Thinkly intent parsing.
 
 ## Output expectation
 

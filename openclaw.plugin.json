@@ -5,6 +5,21 @@
   "configSchema": {
     "type": "object",
     "additionalProperties": true,
+    "allOf": [
+      {
+        "required": ["apiUrl"]
+      },
+      {
+        "anyOf": [
+          {
+            "required": ["apiKey"]
+          },
+          {
+            "required": ["apiToken"]
+          }
+        ]
+      }
+    ],
     "properties": {
       "apiUrl": {
         "type": "string"
@@ -43,44 +58,44 @@
       "llm.apiKey": {
         "type": "string"
       }
-    },
-    "required": ["apiUrl"]
+    }
   },
   "uiHints": {
     "apiUrl": {
       "label": "Thinkly API URL",
       "placeholder": "https://thinkly.pluglab.ai",
-      "help": "Optional while saving settings. Required before /clip or /ingest can run."
+      "help": "Required. Set the Thinkly API base URL before /clip or /ingest can run."
     },
     "apiKey": {
       "label": "Thinkly API Key",
       "sensitive": true,
-      "help": "Scoped API key for the Thinkly OpenClaw plugin"
+      "help": "Required for new setups. Scoped API key used to send clips and ingests to Thinkly."
     },
     "apiToken": {
       "label": "Legacy API Token",
       "sensitive": true,
-      "help": "Backward-compatible fallback. Prefer API key for new setups."
+      "help": "Legacy fallback if you do not have an API key yet. Prefer apiKey for new setups."
     },
     "transportMode": {
       "label": "Transport mode",
-      "help": "Use legacy_highlights for full compatibility. Use agent_api_v1 to test the newer Agent API path.",
+      "help": "Choose which Thinkly endpoint receives saved data. Use legacy_highlights for compatibility, or agent_api_v1 to test the newer Agent API path.",
       "advanced": true
     },
     "llm.apiKey": {
       "label": "LLM API Key",
       "sensitive": true,
+      "help": "Optional. If set with llm.provider and llm.model, message text may be sent to the LLM provider for intent parsing and high-confidence auto-execution.",
       "advanced": true
     },
     "llm.provider": {
       "label": "LLM Provider",
       "advanced": true,
-      "help": "Optional. Example: openai"
+      "help": "Optional. Used only with llm.model and llm.apiKey to enable external intent parsing. Example: openai"
     },
     "llm.model": {
       "label": "LLM Model",
       "advanced": true,
-      "help": "Optional. Example: gpt-4.1-mini"
+      "help": "Optional. Used only with llm.provider and llm.apiKey for external intent parsing. Example: gpt-4.1-mini"
     }
   },
   "skills": ["skills"]
